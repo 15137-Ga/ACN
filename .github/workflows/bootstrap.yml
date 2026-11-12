@@ -10,11 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Mirror upstream sources
+        # .github is skipped: the built-in token is not allowed to create or
+        # update workflow files, those are added separately.
         run: |
           git clone --depth 1 https://github.com/trocedge/ACN.git upstream
           rm -rf upstream/.git
-          shopt -s dotglob
-          cp -a upstream/* .
+          rsync -a --exclude '.github/' upstream/ ./
           rm -rf upstream
       - name: Commit and push
         run: |
