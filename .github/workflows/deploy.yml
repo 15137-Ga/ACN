@@ -1,105 +1,87 @@
 name: Deploy
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 # GitHub Pages deployment needs an OIDC token plus permission to publish.
 permissions:
   contents: read
   pages: write
   id-token: write
-
 # Never run two Pages deployments at once, but let an in-flight one finish.
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Resolve site base path
         # A repository named <owner>.github.io is served from the domain root,
         # every other repository is served from /<repo>/.
         run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
           repo="${GITHUB_REPOSITORY#*/}"
-          if [ "$repo" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
+          if [ "$repo" = "${owner}.github.io" ]; then
             base=""
           else
             base="/${repo}"
           fi
           echo "SITE_BASE_PATH=${base}" >> "$GITHUB_ENV"
-          echo "SITE_URL=https://${GITHUB_REPOSITORY_OWNER}.github.io${base}" >> "$GITHUB_ENV"
-          echo "Publishing to https://${GITHUB_REPOSITORY_OWNER}.github.io${base}/"
-
+          echo "SITE_URL=https://${owner}.github.io${base}" >> "$GITHUB_ENV"
+          echo "Publishing to https://${owner}.github.io${base}/"
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           check-latest: true
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
-
       - name: Assemble yml files
         run: python scripts/build_data.py
-
       - name: Generate iCal files
         run: |
           python extensions/cli/ccfddl/convert_to_ical.py --output-dir public/conference/deadlines
-
       - name: Generate RSS feeds
         run: |
           python extensions/cli/ccfddl/convert_to_rss.py --output-dir public/conference/deadlines --feed-base-url "${SITE_URL}/conference/deadlines/"
-
       # Install Rust Nightly Toolchain, with Clippy & Rustfmt
       - name: Install nightly Rust
         uses: dtolnay/rust-toolchain@nightly
         with:
           components: clippy, rustfmt
           targets: wasm32-unknown-unknown
-
       - name: Cache Rust build
         uses: Swatinem/rust-cache@v2
         with:
           key: pages-site
-
       - name: Download and install Trunk binary
-        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.4/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf- -C /usr/local/bin trunk
-
+        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.4/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
       - name: Build with Trunk
-        # --public-url makes every generated asset reference relative to the
-        # sub-path the site is served from; CCFDDL_BASE_PATH is the same value
-        # compiled into the WASM app so its data fetches and links match.
+        # --public-url keeps every generated asset relative to the sub-path the
+        # site is served from; CCFDDL_BASE_PATH is compiled into the WASM app so
+        # its data fetches and links resolve under the same prefix.
         env:
           CCFDDL_BASE_PATH: ${{ env.SITE_BASE_PATH }}
         run: ./trunk build --release --public-url "${SITE_BASE_PATH}/"
-
       - name: Generate crawlable conference pages
         env:
           CCFDDL_SITE_URL: ${{ env.SITE_URL }}
         run: python scripts/generate_seo_pages.py --skip-share-images
-
       - name: Rewrite asset paths for sub-path hosting
         run: python scripts/rewrite_base_path.py dist --base-path "${SITE_BASE_PATH}"
-
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
