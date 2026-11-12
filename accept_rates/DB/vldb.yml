@@ -1,0 +1,27 @@
+# Research track only; the 2023-2024 counts are preserved from existing records.
+- title: VLDB
+  accept_rates:
+    - year: 2021
+      submitted: 882
+      accepted: 212
+      str: 24.0%(212/882 21')
+      rate: 0.240362811791383
+      source: https://link.springer.com/article/10.1007/s00778-023-00792-2
+    - year: 2022
+      submitted: 976
+      accepted: 265
+      str: 27.2%(265/976 22')
+      rate: 0.271516393442623
+      source: https://link.springer.com/content/pdf/10.1007/s00778-025-00930-y.pdf
+    - year: 2023
+      submitted: 1074
+      accepted: 266
+      str: 24.8%(266/1074 23')
+      rate: 0.247672253258845
+      source: https://github.com/emeryberger/csconferences
+    - year: 2024
+      submitted: 1437
+      accepted: 280
+      str: 19.5%(280/1437 24')
+      rate: 0.194850382741823
+      source: https://vldb.org/pvldb/volumes/17/

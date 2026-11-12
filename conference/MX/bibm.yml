@@ -1,0 +1,60 @@
+- title: BIBM
+  description: IEEE International Conference on Bioinformatics and Biomedicine
+  sub: MX
+  rank:
+    ccf: B
+    core: N
+    thcpl: N
+  dblp: bibm
+  confs:
+    - year: 2021
+      id: bibm21
+      link: https://ieeebibm.org/BIBM2021/
+      timeline:
+        - deadline: '2021-08-28 17:00:00'
+      timezone: UTC-5
+      date: December 10-12, 2021
+      place: Online
+    - year: 2022
+      id: bibm22
+      link: http://ieeebibm.org/BIBM2022/
+      timeline:
+        - deadline: '2022-08-21 17:00:00'
+      timezone: UTC-5
+      date: December 6-8, 2022
+      place: Las Vegas, NV, USA; Changsha, China
+    - year: 2023
+      id: bibm23
+      link: https://bidma.cpsc.ucalgary.ca/IEEE-BIBM-2023/
+      timeline:
+        - deadline: '2023-08-15 17:00:00'
+      timezone: UTC-5
+      date: December 6-8, 2023
+      place: Istanbul, Turkey
+    - year: 2024
+      id: bibm24
+      link: https://ieeebibm.org/BIBM2024/
+      timeline:
+        - deadline: '2024-06-20 17:00:00'
+          comment: 'Round 1'
+        - deadline: '2024-08-16 17:00:00'
+          comment: 'Round 2'
+      timezone: UTC-5
+      date: December 4-6, 2024
+      place: Lisbon, Portugal
+    - year: 2025
+      id: bibm25
+      link: https://ieeebibm.org/BIBM2025/
+      timeline:
+        - deadline: '2025-08-03 17:00:00'
+      timezone: UTC-5
+      date: December 16-18, 2025
+      place: Wuhan, China
+    - year: 2026
+      id: bibm26
+      link: https://ieeebibm.org/BIBM2026/
+      timeline:
+        - deadline: '2026-07-05 23:59:59'
+      timezone: UTC-12
+      date: Dec 1-4, 2026
+      place: Dallas, USA

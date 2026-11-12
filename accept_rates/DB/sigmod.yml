@@ -1,0 +1,20 @@
+- title: SIGMOD
+  accept_rates:
+    - year: 2023
+      submitted: 660
+      accepted: 186
+      str: 28.2%(186/660 23')
+      rate: 0.281818181818182
+      source: https://github.com/emeryberger/csconferences
+    - year: 2024
+      submitted: 768
+      accepted: 213
+      str: 27.7%(213/768 24')
+      rate: 0.27734375
+      source: https://dl.acm.org/doi/10.1145/3654917
+    - year: 2025
+      submitted: 1008
+      accepted: 250
+      str: 24.8%(250/1008 25')
+      rate: 0.24801587301587302
+      source: https://2025.sigmod.org/SigmodPods25-welcome.pdf

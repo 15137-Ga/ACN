@@ -1,0 +1,71 @@
+- title: CT-RSA
+  description: Cryptographer's Track at RSA Conference
+  sub: SC
+  rank:
+    ccf: C
+    core: B
+    thcpl: B
+  dblp: ctrsa
+  confs:
+    - year: 2021
+      id: ct-rsa21
+      link: https://sites.google.com/site/ctrsa2021/
+      timeline:
+        - deadline: '2020-12-01 23:59:59'
+      timezone: UTC-12
+      date: May 17-20, 2021
+      place: Virtual
+    - year: 2022
+      id: ct-rsa22
+      link: https://ct-rsa-2022.auckland.ac.nz/
+      timeline:
+        - deadline: '2021-09-23 23:59:59'
+          comment: Submission deadline
+      timezone: UTC
+      date: February 07-10 , 2022
+      place: San Francisco, CA, USA
+    - year: 2023
+      id: ct-rsa23
+      link: https://ct-rsa-2023.eecs.oregonstate.edu/
+      timeline:
+        - deadline: '2022-10-18 23:59:59'
+          comment: Regular paper submission
+      timezone: UTC-12
+      date: April 24-27, 2023
+      place: San Francisco, CA, USA
+    - year: 2024
+      id: ct-rsa24
+      link: https://ct-rsa-2024.aau.at/
+      timeline:
+        - deadline: '2023-10-08 11:59:59'
+          comment: Submission deadline
+      timezone: UTC
+      date: May 06-09 , 2024
+      place: San Francisco, CA, USA
+    - year: 2025
+      id: ct-rsa25
+      link: https://ct-rsa-2025.csa.iisc.ac.in/
+      timeline:
+        - deadline: '2024-10-30 23:59:59'
+          comment: Paper submission deadline
+      timezone: UTC-12
+      date: April 28-May 1, 2025
+      place: San Francisco, California, USA
+    - year: 2026
+      id: ct-rsa26
+      link: https://conference.wsu.edu/ct-rsa-2026/
+      timeline:
+        - deadline: '2025-10-24 23:59:59'
+          comment: Paper submission deadline
+      timezone: UTC-12
+      date: March 23-26, 2026
+      place: San Francisco, California, USA
+    - year: 2027
+      id: ct-rsa27
+      link: https://www.esat.kuleuven.be/cosic/events/ct-rsa-2027/
+      timeline:
+        - deadline: '2026-10-22 23:59:59'
+          comment: Paper submission deadline
+      timezone: UTC-12
+      date: April 5-8, 2027
+      place: San Francisco, California, USA

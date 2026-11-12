@@ -1,0 +1,73 @@
+- title: ASP-DAC
+  description: Asia and South Pacific Design Automation Conference
+  sub: DS
+  rank:
+    ccf: C
+    core: B
+    thcpl: B
+  dblp: aspdac
+  confs:
+    - year: 2021
+      id: aspdac21
+      link: https://www.aspdac.com/aspdac2021/
+      timeline:
+        - deadline: '2020-07-26 17:00:00'
+          comment: Initial paper registration/submission; later PDF update excluded
+      timezone: AoE
+      date: January 19-21, 2021
+      place: Virtual
+    - year: 2022
+      id: aspdac22
+      link: https://www.aspdac.com/aspdac2022/
+      timeline:
+        - deadline: '2021-07-21 17:00:00'
+          comment: Initial manuscript required; later PDF update excluded
+      timezone: AoE
+      date: January 18-20, 2022
+      place: Virtual
+    - year: 2023
+      id: aspdac23
+      link: https://www.aspdac.com/aspdac2023/
+      timeline:
+        - abstract_deadline: '2022-07-24 17:00:00'
+          deadline: '2022-07-29 17:00:00'
+      timezone: AoE
+      date: January 17-19, 2023
+      place: Tokyo Odaiba Miraikan, Japan
+    - year: 2024
+      id: aspdac24
+      link: https://www.aspdac.com/aspdac2024/
+      timeline:
+        - abstract_deadline: '2023-07-28 17:00:00'
+          deadline: '2023-08-04 17:00:00'
+      timezone: AoE
+      date: January 23-25, 2024
+      place: Songdo Convensia, Incheon, South Korea
+    - year: 2025
+      id: aspdac25
+      link: https://www.aspdac.com/aspdac2025/
+      timeline:
+        - abstract_deadline: '2024-07-05 17:00:00'
+          deadline: '2024-07-12 17:00:00'
+      timezone: AoE
+      date: January 21-23, 2025
+      place: Tokyo Odaiba Miraikan, Japan
+    - year: 2026
+      id: aspdac26
+      link: https://www.aspdac.com/aspdac2026/
+      timeline:
+        - abstract_deadline: '2025-07-04 17:00:00'
+          deadline: '2025-07-11 17:00:00'
+      timezone: AoE
+      date: January 20-22, 2026
+      place: Hong Kong Disneyland
+    - year: 2027
+      id: aspdac27
+      link: https://www.aspdac.com/aspdac2027/
+      timeline:
+        - abstract_deadline: '2026-07-11 17:00:00'
+          deadline: '2026-07-18 17:00:00'
+          decision_deadline: '2026-09-04 23:59:59'
+      timezone: AoE
+      date: Jan 25-28, 2027
+      place: Hitotsubashi Hall, Tokyo, Japan
