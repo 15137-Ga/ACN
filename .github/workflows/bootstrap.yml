@@ -1,0 +1,25 @@
+name: Bootstrap
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Mirror upstream sources
+        run: |
+          git clone --depth 1 https://github.com/trocedge/ACN.git upstream
+          rm -rf upstream/.git
+          shopt -s dotglob
+          cp -a upstream/* .
+          rm -rf upstream
+      - name: Commit and push
+        run: |
+          git config user.name "bootstrap"
+          git config user.email "bootstrap@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: mirror trocedge/ACN sources"
+          git push origin HEAD:main
